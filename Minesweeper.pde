@@ -70,7 +70,6 @@ public void displayLosingMessage()
   buttons[NUM_ROW/2][NUM_COL/2 + 1].setLabel("O"); 
   buttons[NUM_ROW/2][NUM_COL/2 + 2].setLabel("S");
   buttons[NUM_ROW/2][NUM_COL/2 + 3].setLabel("E");
-  noLoop();
 }
 public void displayWinningMessage()
 {
@@ -150,6 +149,7 @@ public class MSButton
     } else if (mines.contains(this)) {
       if (!flagged)
         displayLosingMessage();
+        noLoop();
     } else if (countMines(myRow, myCol) > 0) {
       clicked = true;
       setLabel(countMines(myRow, myCol));
